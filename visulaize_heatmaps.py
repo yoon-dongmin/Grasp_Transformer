@@ -19,11 +19,11 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Evaluate GG-CNN')
 
     # Network
-    parser.add_argument('--network', type=str,default="./output/models/220623_1311_/epoch_08_iou_0.97", help='Path to saved network to evaluate')
+    parser.add_argument('--network', type=str,default="./output/models/221007_1544_/epoch_21_iou_0.68", help='Path to saved network to evaluate')
 
     # Dataset & Data & Training
     parser.add_argument('--dataset', type=str, default="cornell",help='Dataset Name ("cornell" or "jaquard")')
-    parser.add_argument('--dataset-path', type=str,default="/home/sam/Desktop/archive111" ,help='Path to dataset')
+    parser.add_argument('--dataset-path', type=str,default="/home/user/Desktop" ,help='Path to dataset')
     parser.add_argument('--use-depth', type=int, default=0, help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=1, help='Use RGB image for training (0/1)')
     parser.add_argument('--split', type=float, default=0.9,
@@ -76,7 +76,7 @@ if __name__ == '__main__':
         # fig = plt.figure(figsize=(10, 10))
         # ax = fig.add_subplot(1, 4, 1)
         # while batch_idx < 100:
-        for id,(x, y, didx, rot, zoom_factor) in enumerate( val_data):
+        for id,(x, y, didx, rot, zoom_factor) in enumerate(val_data):
                 # batch_idx += 1
 
                 print(id)

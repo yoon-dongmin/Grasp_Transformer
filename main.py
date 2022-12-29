@@ -17,7 +17,7 @@ def parse_args():
     # Network
     # Dataset & Data & Training
     parser.add_argument('--dataset', type=str,default="jacquard", help='Dataset Name ("cornell" or "jacquard")')
-    parser.add_argument('--dataset-path', type=str,default="/home/sam/Desktop/cornell" ,help='Path to dataset')
+    parser.add_argument('--dataset-path', type=str,default="/home/user/Desktop" ,help='Path to dataset')
     parser.add_argument('--use-depth', type=int, default=0, help='Use Depth image for training (1/0)')
     parser.add_argument('--use-rgb', type=int, default=1, help='Use RGB image for training (0/1)')
     parser.add_argument('--split', type=float, default=0.9, help='Fraction of data for training (remainder is validation)')
@@ -36,6 +36,8 @@ def parse_args():
 
     args = parser.parse_args()
     return args
+
+    
 def run():
     args = parse_args()
     dt = datetime.datetime.now().strftime('%y%m%d_%H%M')
